@@ -18,4 +18,11 @@ export interface Country {
     googleMaps: string;
     openStreetMaps: string;
   };
+
+  currencies: {
+    coin: {
+      symbol: string;
+      name: string;
+    };
+  };
 }
