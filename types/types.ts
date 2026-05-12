@@ -3,15 +3,15 @@ export interface Country {
     common: string;
     official: string;
   };
-  flag: {
+  flags: {
     png: string;
     svg: string;
-    alt: string;
+    alt?: string;
   };
   population: number;
   region: string;
-  subregion: string;
-  borders: [string];
+  subregion?: string;
+  borders?: string[];
   area: number;
 
   maps: {
@@ -25,4 +25,9 @@ export interface Country {
       name: string;
     };
   };
+  capital?: string[];
 }
+
+export type CountryCardProps = {
+  country: Country;
+};

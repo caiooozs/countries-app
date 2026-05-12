@@ -13,7 +13,7 @@ const Hero = () => {
             +<NumberTicker value={100} className="" /> Países com dados
             atualizados <WiDirectionUpRight />
           </Badge>
-          <div className="mt-6">
+          <div className="mt-6 mb-6">
             <h1 className="font-display text-5xl leading-[1.05] md:text-7xl">
               O mundo inteiro,
               <br />
@@ -25,9 +25,6 @@ const Hero = () => {
               Explore população, capitais, idiomas, moedas e cultura de cada
               país. Uma enciclopédia moderna, rápida e bonita de usar.
             </p>
-          </div>
-          <div className="mt-12 mb-12 w-1/2">
-            <Input placeholder="Explorar" />
           </div>
           <Separator />
           <div className="grid grid-cols-2 gap-8 pt-8 md:grid-cols-4 mb-35">
