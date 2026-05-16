@@ -19,7 +19,19 @@ const AllCountriesViewModel = () => {
   const baseCountries =
     selectedSubregion === "all" ? allCountries : filteredBySubregion;
 
-  const countries = useMemo(() => {}, [baseCountries, search]);
+  const countries = useMemo(() => {
+    const term = search.trim().toLowerCase();
+    if (!term) return baseCountries;
+
+    return baseCountries.filter((country) => {
+      const name = country.name.common.toLowerCase();
+      const official = country.name.official.toLowerCase();
+      const capital = country.capital?.[0]?.toLowerCase() ?? "";
+      return (
+        name.includes(term) || official.includes(term) || capital.includes(term)
+      );
+    });
+  }, [search, baseCountries]);
   return {
     selectedSubregion,
     setSelectedSubregion,

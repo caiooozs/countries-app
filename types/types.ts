@@ -19,12 +19,13 @@ export interface Country {
     openStreetMaps: string;
   };
 
-  currencies: {
-    coin: {
+  currencies?: Record<
+    string,
+    {
       symbol: string;
       name: string;
-    };
-  };
+    }
+  >;
   capital?: string[];
   cca3: string;
 }
