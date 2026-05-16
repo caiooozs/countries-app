@@ -8,7 +8,7 @@ A aplicação está publicada em produção via Vercel:
 
 🔗 [https://countries-app-delta-orpin.vercel.app/](https://countries-app-delta-orpin.vercel.app/)
 
-## Sobre o desafio
+## Desafio Frontend
 
 Este projeto atende ao desafio técnico de construir uma aplicação com:
 
