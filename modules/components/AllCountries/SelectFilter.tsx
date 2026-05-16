@@ -13,14 +13,14 @@ const SelectFilter = ({ onChange, options, value }: SubregionSelectProps) => {
   return (
     <>
       <div className="flex items-center gap-2">
-        <p className="text-muted-foreground text-sm">Subregião</p>
+        <p className="text-muted-foreground text-sm">Subregion</p>
         <Select value={value} onValueChange={onChange}>
           <SelectTrigger className="w-full">
             <SelectValue placeholder="Filtrar por Subregião" />
           </SelectTrigger>
           <SelectContent>
             <SelectGroup>
-              <SelectItem value="all">Todas</SelectItem>
+              <SelectItem value="all">All</SelectItem>
               {options.map((subregion) => (
                 <SelectItem key={subregion} value={subregion}>
                   {subregion}
