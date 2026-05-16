@@ -34,7 +34,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
           <Button asChild variant="outline">
             <Link href="/">
               <FiArrowLeft />
-              Voltar para a Home
+              Back to Home
             </Link>
           </Button>
         </div>
@@ -45,7 +45,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
           <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
             <div>
               <p className="text-sm uppercase tracking-wide text-muted-foreground">
-                Perfil do Pais
+                Country Profile
               </p>
               <h1 className="mt-2 text-4xl font-semibold md:text-5xl">
                 {country.name.common}
@@ -58,10 +58,10 @@ export default async function CountryPage({ params }: CountryPageProps) {
                   {country.region}
                 </span>
                 <span className="rounded-full border px-3 py-1 text-xs text-muted-foreground">
-                  {country.subregion ?? "Sub-regiao nao informada"}
+                  {country.subregion ?? "Subregion not available"}
                 </span>
                 <span className="rounded-full border px-3 py-1 text-xs text-muted-foreground">
-                  Codigo: {country.cca3}
+                  Code: {country.cca3}
                 </span>
               </div>
             </div>
@@ -82,7 +82,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
           </Card>
           <Card>
             <CardHeader>
-              <CardDescription>Populacao</CardDescription>
+              <CardDescription>Population</CardDescription>
               <CardTitle>
                 {country.population.toLocaleString("pt-BR")}
               </CardTitle>
@@ -96,7 +96,7 @@ export default async function CountryPage({ params }: CountryPageProps) {
           </Card>
           <Card>
             <CardHeader>
-              <CardDescription>Fronteiras</CardDescription>
+              <CardDescription>Borders</CardDescription>
               <CardTitle>{country.borders?.length ?? 0}</CardTitle>
             </CardHeader>
           </Card>
@@ -105,25 +105,25 @@ export default async function CountryPage({ params }: CountryPageProps) {
         <section className="mt-6 grid gap-6 lg:grid-cols-2">
           <Card>
             <CardHeader>
-              <CardTitle>Detalhes</CardTitle>
+              <CardTitle>Details</CardTitle>
             </CardHeader>
             <Separator />
             <CardContent className="space-y-3 pt-4 text-sm">
               <p>
-                <span className="font-medium">Moeda:</span>{" "}
+                <span className="font-medium">Currency:</span>{" "}
                 {firstCurrency
                   ? `${firstCurrency.name} (${firstCurrency.symbol ?? "-"})`
                   : "N/A"}
               </p>
               <p>
-                <span className="font-medium">Fronteiras:</span>{" "}
-                {country.borders?.join(", ") ?? "Sem fronteiras terrestres"}
+                <span className="font-medium">Borders:</span>{" "}
+                {country.borders?.join(", ") ?? "No land borders"}
               </p>
               <p>
-                <span className="font-medium">Regiao:</span> {country.region}
+                <span className="font-medium">Region:</span> {country.region}
               </p>
               <p>
-                <span className="font-medium">Sub-regiao:</span>{" "}
+                <span className="font-medium">Subregion:</span>{" "}
                 {country.subregion ?? "N/A"}
               </p>
             </CardContent>
@@ -131,8 +131,8 @@ export default async function CountryPage({ params }: CountryPageProps) {
 
           <Card>
             <CardHeader>
-              <CardTitle>Navegacao</CardTitle>
-              <CardDescription>Explore a localizacao do pais</CardDescription>
+              <CardTitle>Navigation</CardTitle>
+              <CardDescription>Explore the country location</CardDescription>
             </CardHeader>
             <Separator />
             <CardContent className="flex flex-wrap gap-3 pt-4">

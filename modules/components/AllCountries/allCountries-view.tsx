@@ -24,7 +24,7 @@ const AllCountriesPage = () => {
       <div className="flex justify-center gap-12 p-6">
         <div>
           <Input
-            placeholder="Pesquise seu país aqui"
+            placeholder="Search for a country"
             className="w-96"
             value={search}
             onChange={(ev) => setSearch(ev.target.value)}

@@ -13,23 +13,21 @@ const Countries = () => {
       <div id="explore" className="bg-muted/50 border-t border-border p-12">
         <div className="flex justify-between p-12 items-center">
           <div>
-            <Badge variant={"outline"}>Em destaque</Badge>
-            <h1 className="font-semibold text-2xl">Explore alguns países</h1>
+            <Badge variant={"outline"}>Featured</Badge>
+            <h1 className="font-semibold text-2xl">Explore some countries</h1>
           </div>
           <div>
             <a
               href="/allCountries"
               className="flex items-center gap-1 transition-all transform hover:font-semibold"
             >
-              Ver todos <LuArrowUpRight />
+              View all <LuArrowUpRight />
             </a>
           </div>
         </div>
 
         {isLoading && <CountryCardSkeleton />}
-        {isError && (
-          <p className="px-12 text-red-500">Erro ao carregar países.</p>
-        )}
+        {isError && <p className="px-12 text-red-500">Error loading countries.</p>}
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 px-12 pb-12">
           {featuredCountries.map((country) => (

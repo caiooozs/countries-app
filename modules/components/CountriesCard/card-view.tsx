@@ -43,7 +43,7 @@ const CountryCard = ({ country }: CountryCardProps) => {
               </div>
               <Separator orientation="vertical" />
               <div className="">
-                <h1 className="text-foreground text-md">População</h1>
+                <h1 className="text-foreground text-md">Population</h1>
                 <span className="text-muted-foreground flex items-center gap-2">
                   <FaUser />
                   {country.population.toLocaleString("pt-BR")}
@@ -54,7 +54,7 @@ const CountryCard = ({ country }: CountryCardProps) => {
           <CardFooter className="flex justify-end">
             <Link href={`/country/${country.cca3}`}>
               <Button className="cursor-pointer">
-                Saiba mais <LuArrowUpRight />
+                Learn more <LuArrowUpRight />
               </Button>
             </Link>
           </CardFooter>
