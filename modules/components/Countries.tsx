@@ -13,7 +13,7 @@ const Countries = () => {
     <>
       <div id="explore" className="bg-muted/50 border-t border-border p-12">
         <div className="flex justify-between p-12 items-center">
-          <div>
+          <div className="">
             <Badge variant={"outline"}>Featured</Badge>
             <h1 className="font-semibold text-2xl">Explore some countries</h1>
           </div>
@@ -32,7 +32,7 @@ const Countries = () => {
           <p className="px-12 text-red-500">Error loading countries.</p>
         )}
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 px-12 pb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 pb-12">
           {featuredCountries.map((country) => (
             <CountryCard key={country.cca3} country={country} />
           ))}

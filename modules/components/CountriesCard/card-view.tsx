@@ -18,7 +18,7 @@ const CountryCard = ({ country }: CountryCardProps) => {
   return (
     <>
       <div>
-        <Card className="transition-all transform hover:shadow-sm h-full grid grid-rows-[min-content_1fr_min-content] m-1">
+        <Card className="transition-all transform hover:shadow-sm h-full grid grid-rows-[min-content_1fr_min-content] m-1 w-full">
           <CardHeader>
             <div className="flex justify-between items-center">
               <div>
