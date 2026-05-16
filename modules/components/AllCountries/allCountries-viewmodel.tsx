@@ -32,6 +32,7 @@ const AllCountriesViewModel = () => {
       );
     });
   }, [search, baseCountries]);
+
   return {
     selectedSubregion,
     setSelectedSubregion,

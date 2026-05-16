@@ -12,7 +12,7 @@ const Header = () => {
 
         <a href="#explore" hrefLang="#explore">
           <Button className="cursor-pointer flex items-center">
-            Explorar <IoIosArrowRoundDown />
+            Explore <IoIosArrowRoundDown />
           </Button>
         </a>
       </header>
