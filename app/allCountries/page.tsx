@@ -1,3 +1,3 @@
-import AllCountriesPage from "@/modules/components/allCountriesComponents/page";
+import AllCountriesPage from "@/modules/components/AllCountries/allCountries-view";
 
 export default AllCountriesPage;

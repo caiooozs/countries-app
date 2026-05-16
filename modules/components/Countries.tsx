@@ -33,7 +33,7 @@ const Countries = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 px-12 pb-12">
           {featuredCountries.map((country) => (
-            <CountryCard key={country.name.common} country={country} />
+            <CountryCard key={country.cca3} country={country} />
           ))}
         </div>
       </div>

@@ -1,5 +1,5 @@
 "use client";
-import { getAllCountries } from "@/services/contries.service";
+import { getAllCountries } from "@/services/countries.service";
 import { useQuery } from "@tanstack/react-query";
 
 export default function useCountries() {

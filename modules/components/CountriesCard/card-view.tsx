@@ -10,6 +10,7 @@ import {
 } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { CountryCardProps } from "@/types/types";
+import Link from "next/link";
 import { FaUser } from "react-icons/fa";
 import { LuArrowUpRight } from "react-icons/lu";
 
@@ -17,7 +18,7 @@ const CountryCard = ({ country }: CountryCardProps) => {
   return (
     <>
       <div>
-        <Card className="transition-all transform hover:shadow-sm h-full grid grid-rows-[min-content_1fr_min-content]">
+        <Card className="transition-all transform hover:shadow-sm h-full grid grid-rows-[min-content_1fr_min-content] m-1">
           <CardHeader>
             <div className="flex justify-between items-center">
               <div>
@@ -50,10 +51,12 @@ const CountryCard = ({ country }: CountryCardProps) => {
               </div>
             </div>
           </CardContent>
-          <CardFooter>
-            <Button className="w-full cursor-pointer">
-              Saiba mais <LuArrowUpRight />
-            </Button>
+          <CardFooter className="flex justify-end">
+            <Link href={`/country/${country.cca3}`}>
+              <Button className="cursor-pointer">
+                Saiba mais <LuArrowUpRight />
+              </Button>
+            </Link>
           </CardFooter>
         </Card>
       </div>

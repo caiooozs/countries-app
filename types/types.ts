@@ -26,6 +26,7 @@ export interface Country {
     };
   };
   capital?: string[];
+  cca3: string;
 }
 
 export type CountryCardProps = {

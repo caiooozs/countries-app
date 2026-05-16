@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { getCountryBySubregion } from "@/services/contries.service";
+import { getCountryBySubregion } from "@/services/countries.service";
 
 export default function useCountryBySubregion(subregion: string) {
   return useQuery({
