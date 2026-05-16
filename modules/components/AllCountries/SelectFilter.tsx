@@ -15,7 +15,7 @@ const SelectFilter = ({ onChange, options, value }: SubregionSelectProps) => {
       <div className="flex items-center gap-2">
         <p className="text-muted-foreground text-sm">Subregião</p>
         <Select value={value} onValueChange={onChange}>
-          <SelectTrigger className="w-56">
+          <SelectTrigger className="w-full">
             <SelectValue placeholder="Filtrar por Subregião" />
           </SelectTrigger>
           <SelectContent>

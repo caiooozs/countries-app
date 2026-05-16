@@ -25,7 +25,7 @@ const AllCountriesPage = () => {
         <div>
           <Input
             placeholder="Search for a country"
-            className="w-96"
+            className="w-full"
             value={search}
             onChange={(ev) => setSearch(ev.target.value)}
           />
