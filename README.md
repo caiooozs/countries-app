@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# FindYourCountry
 
-## Getting Started
+Aplicação desenvolvida com **Next.js + TypeScript** para consulta de países, com foco em experiência do usuário, organização de código e boas práticas de desenvolvimento.
 
-First, run the development server:
+## Deploy
+
+A aplicação está publicada em produção via Vercel:
+
+🔗 [https://countries-app-delta-orpin.vercel.app/](https://countries-app-delta-orpin.vercel.app/)
+
+## Sobre o desafio
+
+Este projeto atende ao desafio técnico de construir uma aplicação com:
+
+- Listagem de países com informações básicas:
+  - Bandeira
+  - Nome
+  - População
+  - Continente/Sub-região
+- Página de detalhes com informações adicionais
+- Busca por nome
+- Filtro por sub-região
+
+## Demo da solução
+
+A aplicação oferece:
+
+- Home com destaque de países
+- Página “All Countries” com:
+  - Busca textual por país
+  - Filtro por sub-região
+- Página de detalhes do país com informações complementares e links de mapa
+
+## Tecnologias utilizadas
+
+- **Next.js (App Router)**
+- **React**
+- **TypeScript**
+- **React Query (@tanstack/react-query)** para cache e gerenciamento de dados
+- **Axios** para consumo da API
+- **Tailwind CSS** para estilização
+- **shadcn/ui** para componentes de interface
+
+## Arquitetura e organização
+
+Estrutura baseada em separação de responsabilidades:
+
+- `modules/components/` → componentes de UI e páginas visuais
+- `hook/` → hooks de dados e estado
+- `services/` → camada de acesso à API
+- `types/` → tipagens TypeScript
+- `app/` → rotas da aplicação
+
+Também foi aplicado o padrão de separação entre lógica e UI em partes da aplicação, facilitando manutenção e evolução.
+
+## Como executar o projeto
+
+### 1. Clone o repositório
 
 ```bash
+git clone <url-do-repositorio>
+cd <nome-da-pasta>
+````
+### 2. Instale as dependências
+
+```bash
+npm install
+````
+
+### 3. Configure as variáveis de ambiente
+#### Crie um arquivo .env.local com:
+````bash
+NEXT_PUBLIC_API_BASEURL=https://restcountries.com
+````
+
+### 4. Rode o projeto
+```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+````
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+### Acesse: http://localhost:3000
