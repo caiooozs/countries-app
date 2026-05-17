@@ -1,0 +1,155 @@
+import Link from "next/link";
+import { Separator } from "../ui/separator";
+import { FiArrowLeft, FiExternalLink } from "react-icons/fi";
+import { Button } from "../ui/button";
+import {
+  Card,
+  CardHeader,
+  CardDescription,
+  CardTitle,
+  CardContent,
+} from "../ui/card";
+import { CountryViewProps } from "./Country.model";
+
+const CountryView = ({ country, firstCurrency }: CountryViewProps) => {
+  return (
+    <>
+      <header className="border-b bg-background/90 backdrop-blur-sm">
+        <div className="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-4">
+          <Link href="/" className="font-display text-xl">
+            FindYourCountry
+          </Link>
+          <Button asChild variant="outline">
+            <Link href="/">
+              <FiArrowLeft />
+              Back to Home
+            </Link>
+          </Button>
+        </div>
+      </header>
+
+      <main className="mx-auto w-full max-w-6xl px-4 py-8">
+        <section className="relative overflow-hidden rounded-xl border bg-gradient-to-br from-muted/60 via-background to-muted/40 p-6 md:p-10">
+          <div className="grid items-center gap-8 md:grid-cols-[1fr_auto]">
+            <div>
+              <p className="text-sm uppercase tracking-wide text-muted-foreground">
+                Country Profile
+              </p>
+              <h1 className="mt-2 text-4xl font-semibold md:text-5xl">
+                {country.name.common}
+              </h1>
+              <p className="mt-2 text-muted-foreground italic">
+                {country.name.official}
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                <span className="rounded-full border px-3 py-1 text-xs text-muted-foreground">
+                  {country.region}
+                </span>
+                <span className="rounded-full border px-3 py-1 text-xs text-muted-foreground">
+                  {country.subregion ?? "Subregion not available"}
+                </span>
+                <span className="rounded-full border px-3 py-1 text-xs text-muted-foreground">
+                  Code: {country.cca3}
+                </span>
+              </div>
+            </div>
+            <img
+              src={country.flags.png}
+              alt={country.flags.alt ?? `Bandeira de ${country.name.common}`}
+              className="h-40 w-64 rounded-md border object-cover shadow-sm"
+            />
+          </div>
+        </section>
+
+        <section className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+          <Card>
+            <CardHeader>
+              <CardDescription>Capital</CardDescription>
+              <CardTitle>{country.capital?.[0] ?? "N/A"}</CardTitle>
+            </CardHeader>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardDescription>Population</CardDescription>
+              <CardTitle>
+                {country.population.toLocaleString("pt-BR")}
+              </CardTitle>
+            </CardHeader>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardDescription>Area</CardDescription>
+              <CardTitle>{country.area.toLocaleString("pt-BR")} km2</CardTitle>
+            </CardHeader>
+          </Card>
+          <Card>
+            <CardHeader>
+              <CardDescription>Borders</CardDescription>
+              <CardTitle>{country.borders?.length ?? 0}</CardTitle>
+            </CardHeader>
+          </Card>
+        </section>
+
+        <section className="mt-6 grid gap-6 lg:grid-cols-2">
+          <Card>
+            <CardHeader>
+              <CardTitle>Details</CardTitle>
+            </CardHeader>
+            <Separator />
+            <CardContent className="space-y-3 pt-4 text-sm">
+              <p>
+                <span className="font-medium">Currency:</span>{" "}
+                {firstCurrency
+                  ? `${firstCurrency.name} (${firstCurrency.symbol ?? "-"})`
+                  : "N/A"}
+              </p>
+              <p>
+                <span className="font-medium">Borders:</span>{" "}
+                {country.borders?.join(", ") ?? "No land borders"}
+              </p>
+              <p>
+                <span className="font-medium">Region:</span> {country.region}
+              </p>
+              <p>
+                <span className="font-medium">Subregion:</span>{" "}
+                {country.subregion ?? "N/A"}
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card>
+            <CardHeader>
+              <CardTitle>Navigation</CardTitle>
+              <CardDescription>Explore the country location</CardDescription>
+            </CardHeader>
+            <Separator />
+            <CardContent className="flex flex-wrap gap-3 pt-4">
+              <Button asChild variant="secondary">
+                <a
+                  href={country.maps.googleMaps}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  Google Maps
+                  <FiExternalLink />
+                </a>
+              </Button>
+              <Button asChild variant="outline">
+                <a
+                  href={country.maps.openStreetMaps}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  OpenStreetMap
+                  <FiExternalLink />
+                </a>
+              </Button>
+            </CardContent>
+          </Card>
+        </section>
+      </main>
+    </>
+  );
+};
+
+export default CountryView;
