@@ -6,8 +6,7 @@ export async function useCountryViewModel({ params }: CountryViewModelProps) {
   const { code } = await params;
   const { getCountryByCode } = await CountryServices();
 
-  const res = await getCountryByCode(code);
-  const [country] = (await res.json()) as Country[];
+  const [country] = (await getCountryByCode(code)) as Country[];
   const firstCurrency = country.currencies
     ? Object.values(country.currencies)[0]
     : undefined;

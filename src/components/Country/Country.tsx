@@ -1,4 +1,3 @@
-"use client";
 import CountryView from "./Country.view";
 import { useCountryViewModel } from "./Country.viewmodel";
 import { CountryViewModelProps } from "./Country.model";
