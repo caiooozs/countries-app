@@ -81,4 +81,4 @@ NEXT_PUBLIC_API_BASEURL=https://restcountries.com
 npm run dev
 ```
 
-Acesse: <http://localhost:3000>
+Acesse por: <http://localhost:3000>
