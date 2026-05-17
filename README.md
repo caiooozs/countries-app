@@ -1,81 +1,84 @@
 # FindYourCountry
 
-Aplicação desenvolvida com **Next.js + TypeScript** para consulta de países, com foco em experiência do usuário, organização de código e boas práticas de desenvolvimento.
+Aplicacao desenvolvida com **Next.js + TypeScript** para consulta de paises, com foco em experiencia do usuario, organizacao de codigo e boas praticas.
 
 ## Deploy
 
-A aplicação está publicada em produção via Vercel:
+Aplicacao publicada na Vercel:
 
-🔗 [https://countries-app-delta-orpin.vercel.app/](https://countries-app-delta-orpin.vercel.app/)
+<https://countries-app-delta-orpin.vercel.app/>
 
-## Desafio Frontend
+## Funcionalidades
 
-Este projeto atende ao desafio técnico de construir uma aplicação com:
+- Listagem de paises com informacoes basicas (bandeira, nome, populacao, regiao/sub-regiao)
+- Home com seção de paises em destaque
+- Pagina **All Countries** com busca textual e filtro por sub-regiao
+- Pagina de detalhes do pais com informacoes complementares e links de mapa
 
-- Listagem de países com informações básicas:
-  - Bandeira
-  - Nome
-  - População
-  - Continente/Sub-região
-- Página de detalhes com informações adicionais
-- Busca por nome
-- Filtro por sub-região
+## Tecnologias
 
-## Demo da solução
+- Next.js (App Router)
+- React
+- TypeScript
+- React Query (@tanstack/react-query)
+- Axios
+- Tailwind CSS
+- shadcn/ui
 
-A aplicação oferece:
+## Arquitetura (MVVM)
 
-- Home com destaque de países
-- Página “All Countries” com:
-  - Busca textual por país
-  - Filtro por sub-região
-- Página de detalhes do país com informações complementares e links de mapa
+O projeto segue o padrao **MVVM** nos componentes principais:
 
-## Tecnologias utilizadas
+- **View**: renderizacao e interacao visual (`*.view.tsx`)
+- **ViewModel**: regras de apresentacao, estados derivados e composicao de dados (`*.viewmodel.ts`)
+- **Model**: contratos de props e tipagens de tela (`*.model.ts`)
 
-- **Next.js (App Router)**
-- **React**
-- **TypeScript**
-- **React Query (@tanstack/react-query)** para cache e gerenciamento de dados
-- **Axios** para consumo da API
-- **Tailwind CSS** para estilização
-- **shadcn/ui** para componentes de interface
+Exemplo:
 
-## Arquitetura e organização
+- `AllCountries.tsx` conecta `AllCountries.view.tsx` ao `AllCountries.viewmodel.ts`
+- `CountriesHome.tsx` conecta `CountriesHome.view.tsx` ao `CountriesHome.viewmodel.ts`
 
-Estrutura baseada em separação de responsabilidades:
+## Estrutura de pastas atualizada
 
-- `modules/components/` → componentes de UI e páginas visuais
-- `hook/` → hooks de dados e estado
-- `services/` → camada de acesso à API
-- `types/` → tipagens TypeScript
-- `app/` → rotas da aplicação
+```text
+src/
+  app/                             # rotas (App Router)
+  components/                      # UI (views, componentes reutilizaveis)
+  features/
+    countries/
+      queries/                     # hooks de consulta de dados da feature
+  services/
+    Countries/                     # servicos de API (countries.service, types)
+  api/                             # instancia/configuracao de cliente HTTP
+  provider/                        # providers globais (React Query etc.)
+  types/                           # tipagens compartilhadas
+```
 
-Também foi aplicado o padrão de separação entre lógica e UI em partes da aplicação, facilitando manutenção e evolução.
+## Como executar
 
-## Como executar o projeto
-
-### 1. Clone o repositório
+1. Clone o repositorio
 
 ```bash
 git clone <url-do-repositorio>
 cd <nome-da-pasta>
-````
-### 2. Instale as dependências
+```
+
+2. Instale as dependencias
 
 ```bash
 npm install
-````
+```
 
-### 3. Configure as variáveis de ambiente
-#### Crie um arquivo .env.local com:
-````bash
+3. Configure variaveis de ambiente no arquivo `.env.local`
+
+```bash
 NEXT_PUBLIC_API_BASEURL=https://restcountries.com
-````
+```
 
-### 4. Rode o projeto
+4. Rode o projeto
+
 ```bash
 npm run dev
-````
+```
 
-### Acesse: http://localhost:3000
+Acesse: <http://localhost:3000>
