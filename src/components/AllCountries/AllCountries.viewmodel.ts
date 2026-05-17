@@ -1,14 +1,13 @@
-import useCountries from "@/src/Dominio/useCountries/useCountries";
+import useCountries from "@/src/features/countries/queries/useCountries";
 import { useState, useMemo } from "react";
-import useCountryBySubregion from "@/src/Dominio/useCountryBySubregion";
-import { Country } from "@/src/services/Coutries/types";
+import useCountryBySubregion from "@/src/features/countries/queries/useCountryBySubregion";
 
 const useAllCountriesViewModel = () => {
   const [selectedSubregion, setSelectedSubregion] = useState("all");
   const [search, setSearch] = useState("");
 
   const { allCountries } = useCountries();
-  const { CountriesByRegion } = useCountryBySubregion(selectedSubregion);
+  const { countriesByRegion } = useCountryBySubregion(selectedSubregion);
 
   const subregionOptions = useMemo(() => {
     return [
@@ -17,7 +16,7 @@ const useAllCountriesViewModel = () => {
   }, [allCountries]);
 
   const baseCountries =
-    selectedSubregion === "all" ? allCountries : CountriesByRegion;
+    selectedSubregion === "all" ? allCountries : countriesByRegion;
 
   const countries = useMemo(() => {
     const term = search.trim().toLowerCase();

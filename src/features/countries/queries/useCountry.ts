@@ -1,5 +1,5 @@
 import { useQuery } from "@tanstack/react-query";
-import { CountryServices } from "../services/Coutries/countries.service";
+import { CountryServices } from "@/src/services/Countries/countries.service";
 
 export default function useCountry(code: string) {
   const { getCountryByCode } = CountryServices();

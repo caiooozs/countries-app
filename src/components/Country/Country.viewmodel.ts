@@ -1,6 +1,6 @@
 import { CountryViewModelProps } from "./Country.model";
-import { Country } from "@/src/services/Coutries/types";
-import { CountryServices } from "@/src/services/Coutries/countries.service";
+import { Country } from "@/src/services/Countries/types";
+import { CountryServices } from "@/src/services/Countries/countries.service";
 
 export async function useCountryViewModel({ params }: CountryViewModelProps) {
   const { code } = await params;

@@ -1,4 +1,4 @@
-import useCountries from "@/src/Dominio/useCountries/useCountries";
+import useCountries from "@/src/features/countries/queries/useCountries";
 
 export default function useCountriesHomeViewModel() {
   const { allCountries, isLoading, isError } = useCountries();

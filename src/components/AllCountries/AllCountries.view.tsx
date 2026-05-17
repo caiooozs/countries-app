@@ -1,5 +1,6 @@
 import CountryCard from "../CountriesCard/CountryCard";
 import { Input } from "../ui/input";
+import Link from "next/link";
 import { AllCountriesViewProps } from "./AllCountries.model";
 import SelectFilter from "./components/SelectFilter";
 
@@ -14,9 +15,9 @@ const AllCountriesView = ({
   return (
     <>
       <div className="flex justify-center items-center h-24 border-b">
-        <a href="/" className="flex items-center gap-2">
+        <Link href="/" className="flex items-center gap-2">
           <span className="font-display text-xl">FindYourCountry</span>
-        </a>
+        </Link>
       </div>
       <div className="flex justify-center gap-12 p-6">
         <div>
@@ -37,7 +38,7 @@ const AllCountriesView = ({
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 p-6">
         {countries?.map((country) => (
-          <CountryCard key={country.name.common} country={country} />
+          <CountryCard key={country.cca3} country={country} />
         ))}
       </div>
     </>

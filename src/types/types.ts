@@ -1,4 +1,4 @@
-import { Country } from "../services/Coutries/types";
+import { Country } from "../services/Countries/types";
 
 export type CountryCardProps = {
   country: Country;
